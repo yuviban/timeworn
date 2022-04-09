@@ -1,0 +1,265 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.nav-bar{
+    background-color: white;
+    height: 50px;
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    color: rgba(0, 0, 0, 0.542);
+    align-items: center;
+}
+
+.nav-bar.active{
+    background-color: #212121;
+    color: white;
+
+}
+.nav-left{
+    width: 50%;
+
+}
+.nav-right{
+    width: 50%;
+
+}
+.logo{
+    font-weight: 700;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    padding-left: 15px;
+    cursor: pointer;
+    font-size: 25px;
+}
+.logo.active{
+    color: white;
+}
+.links{
+    list-style: none;
+    font-weight: 500;
+    display: flex;
+
+    
+}
+
+
+.nav-item-links{
+    padding-right: 15px;
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
+    
+    
+    
+    
+}
+.nav-item-links:after{
+    content: "";
+    background-color: #ff5e6c;
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: -7px;
+    left :0px;
+    transition: 0.3s;
+}
+.nav-item-links:hover:after{
+    width: 100%;
+    
+}
+.nav-item-links:hover{
+    color: black;
+
+}
+.nav-item-links.active:hover{
+    color: white;
+
+}
+.nav-item-links.active{
+    color: rgba(255, 255, 255, 0.85);
+
+}
+
+.login-btn{
+    color: white;
+    margin-left: 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    height: 30px;
+    border: none;
+    background-color: #ff5e6c;
+    transition: 0.3s;
+    outline: none;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+.nav-btn{
+    float: right;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+}
+.signup-btn{
+    color: white;
+    margin-left: 15px;
+    border-radius: 5px;
+    height: 30px;
+    width: 80px;
+    text-align: center;
+    font-weight: 600;
+    background-color:#6c63ff;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s;
+}
+
+.login-btn:hover{
+    background-color: #e3505d;
+    
+    
+    
+}
+.signup-btn:hover{
+    background-color:#524bda;
+
+
+
+}
+.menu{
+    background-image: url("../Drawebles/menu.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+    height: 30px;
+    width: 35px;
+    display: none;
+    border: none;
+    transform: translate(15px);
+  
+}
+.mode-btn{
+    background-image: url("../Drawebles/day.png");
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    margin-left: 15px;
+    border: none;
+    background-repeat: no-repeat;
+}
+.mode-btn.active{
+    background-image: url('../Drawebles/night.png');
+}
+@media screen and (max-width: 657px){
+    body{
+        overflow-x: hidden;
+    }
+  
+  
+    .menu{
+        display: block ;
+       
+    }
+    .menu.active{
+        background-image: url("../Drawebles/menuwhite.png");
+    }
+    .nav-left{
+     position: absolute;
+     top :50px;
+   
+     left:-106%;
+     width: 100vw;
+     transition: 0.3s;
+     
+    }
+    .nav-left.active{
+        transition: 0.3s;
+        left:0;
+    }
+   
+    .nav-right{
+        position: absolute;
+        left :190px;
+   
+    }
+    .nav-items{
+        padding: 4px;
+    }
+    .logo{
+        padding-left: 38px;
+    }
+    .links{
+        float: left;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.09);
+        width: 100vw;
+        padding: 10px;
+    }
+    .links.active{
+        
+        background-color: #424242;
+        
+    }
+  
+
+
+}
+@media screen and (max-width: 362px){
+    body{
+        overflow-x: hidden;
+    }
+    .logo{
+        padding-left: 28px;
+    }
+  
+    .nav-btn{
+        padding-right: 0px;
+        width: 211px;
+       
+    }
+    .mode-btn{
+        margin-left: 10px;
+    }
+    .signup-btn{
+        margin-left: 10px;
+    }
+
+}
+@media screen and (max-width: 280px){
+    body{
+        overflow-x: hidden;
+    }
+    .logo{
+        padding-left: 25px;
+        font-size: 20px;
+    }
+    .menu{
+        height: 20px;
+        width: 25px;
+    }
+    .signup-btn{
+        width: 63px;
+    }
+    .nav-bar{
+        width: 160px;
+    }
+    .nav-btn{
+        width: 200px;
+    }
+  
+
+
+}
+@media screen and (max-width: 453px){
+    .mode-btn{
+        margin-right: -20px;
+    }
+    .login-btn{
+        width: 58px;
+    }
+
+}

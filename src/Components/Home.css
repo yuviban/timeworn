@@ -1,0 +1,26 @@
+
+.card-holder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+}
+.card-holder.active{
+    background-color: #303030;
+}
+
+
+@media screen and (max-width: 740px){
+    .card-holder{
+        flex-direction: column;
+    }
+
+}
+@media screen and (max-width: 657px){
+    .card-holder{
+
+    padding-top: 204px;
+
+    }
+
+}
