@@ -7,7 +7,7 @@ const { body, validationResult } = require('express-validator');
 router.get('/fetchteam', fetchuser, async (req, res) => {
     try {
         const teams = await Teams.find({ user: req.user.id });
-        res.json({ teams });
+        res.json(teams );
 
     } catch (error) {
         console.error(error.message)
@@ -17,8 +17,8 @@ router.get('/fetchteam', fetchuser, async (req, res) => {
 })
 // ROUTE:2 Adding a Team :"/api/teams/addteam" login require
 router.post('/addteam', fetchuser, [
-    body('teamname', "Team name must be atleast 3 charecter").isLength({ min: 3 }),
-    body('teamcode', "Team code must be atleast 4 charecter").isLength({ min: 4 }),
+    body('teamname', "Team name must be minimum 3 charecter and maximum 13 charecter").isLength({ min: 3, max:13}),
+    body('teamcode', "Team code must be minimum 4 charecter and maximum 10 charetor").isLength({ min: 4 , max:6}),
     body('teamdescription', "Length of description must be atleast 5 charecter").isLength({ min: 5 }),
 
 ], async (req, res) => {

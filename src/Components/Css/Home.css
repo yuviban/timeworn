@@ -8,6 +8,15 @@
 .card-holder.active{
     background-color: #303030;
 }
+/* .team-card-bg{
+    width: 50vh;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+
+} */
 
 
 @media screen and (max-width: 740px){
@@ -18,8 +27,7 @@
 }
 @media screen and (max-width: 657px){
     .card-holder{
-
-    padding-top: 204px;
+    padding-top: 68px;
 
     }
 

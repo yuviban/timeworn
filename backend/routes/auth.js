@@ -14,7 +14,7 @@ router.post('/createuser', [
    body('username', "Enter a valid username").isLength({ min: 3 }),
    body('firstname', "Enter a valid First Name").isLength({ min: 3 }),
    body('lastname', "Enter a valid Last Name").isLength({ min: 3 }),
-], async (req, res) => {
+], async (req, res) => {      
    // if there are error,return bad request
    const errors = validationResult(req);
    if (!errors.isEmpty()) {

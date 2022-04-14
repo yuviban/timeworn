@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from './Card';
-import './Home.css';
+import '../Components/Css/Home.css';
 import team from '../Drawebles/team.png'
 import code from '../Drawebles/code.png'
 import ppt from '../Drawebles/ppt.png'
@@ -15,6 +15,7 @@ function Home(props) {
           cardbtn="+ Create team"
           cardbg={team}
           dMode={props.darkMode}
+          toggleModel={props.toggleModel}
           />
           <Card
           cardtitle="Present PPT"

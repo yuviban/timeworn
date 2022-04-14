@@ -1,0 +1,153 @@
+.team-card-holder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    color: black;
+}
+
+
+.edit-modal-bg{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.342);
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 114%;
+}
+
+.crt-btn{
+    transform: translate(-32px, 56px);
+    border-radius: 20px;
+    float: right;
+    text-align: center;
+    color: #ffff;
+    background-color: #6c63ff;
+    border: none;
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 1rem;
+    height: 40px;
+    width: 125px;
+}
+
+.edit-modal-bg.active{
+    display: none;
+}
+.edit-modal-container{
+    background-color: white;
+    border-radius: 15px;
+    height: 50%;
+    width: 30%;
+    margin-top: -81px;
+    padding: 20px;
+}
+.edit-form-container{
+    width: 410px;
+    height: 262px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    margin-top: 50px;
+ 
+}
+.edit-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+    padding: 34px;
+    padding-right: 35px;
+ 
+}
+
+.save-team-btn{
+    text-align: center;
+    width: 150px;
+    border-radius: 20px;
+    color: #ffff;
+    background-color: #6c63ff;
+    border: none;
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 1rem;
+    height: 40px;
+    width: 200px;
+}
+
+.edit-modal-close{
+    float: right;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    background-image: url("/src/Drawebles/close.png");
+    width: 24px;
+    height: 24px;
+    margin: -11px;
+
+}
+.edit-text-area{
+    width: 345px;
+    height: 180px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    resize: none;
+    font-size: 14px;
+
+}
+.edit-text-area:focus{
+    outline: none;
+    text-decoration: none;
+
+}
+.edit-input{
+    margin-bottom: 20px;
+    height: 30px;
+    width: 345px;
+    font-size: 14px;
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.452);
+}
+.edit-lable1{
+  
+    transform: translateX(-109px);
+    font-size: 15px;
+    font-weight: 500;
+}
+.edit-lable2{
+  
+    transform: translateX(-88px);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.grid{
+    display: grid;
+    grid-gap:50px;
+    grid-template-columns: 280px 280px 280px  ;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+@media screen and (max-width: 958px){
+    .grid{
+        grid-template-columns: 280px 280px ;
+
+    }
+
+}
+@media screen and (max-width: 658px){
+    .grid{
+        display: flex;
+        flex-direction: column;
+
+    }
+
+}

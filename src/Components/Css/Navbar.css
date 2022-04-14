@@ -44,14 +44,27 @@
 }
 
 
+
 .nav-item-links{
     padding-right: 15px;
     cursor: pointer;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.61);
     position: relative;
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
     letter-spacing: 0.5px;
     padding: 0 10px;
+    
+    
+    
+    
+}
+.nav-item-links.change{
+    color: black;
+
+
+    
     
     
     
@@ -91,11 +104,14 @@
     font-weight: 600;
     height: 30px;
     border: none;
-    background-color: #ff5e6c;
-    transition: 0.3s;
+    background-color: transparent;
     outline: none;
+    color: black;
     text-align: center;
     font-family: 'Poppins', sans-serif;
+}
+.login-btn.active{
+    color: white;
 }
 .nav-btn{
     float: right;
@@ -111,26 +127,26 @@
     width: 80px;
     text-align: center;
     font-weight: 600;
-    background-color:#6c63ff;
+    background-color: #f9636e;
     border: none;
     font-family: 'Poppins', sans-serif;
     transition: 0.3s;
+ 
 }
 
 .login-btn:hover{
-    background-color: #e3505d;
+    color: #f9636e;
+  
     
     
     
 }
 .signup-btn:hover{
-    background-color:#524bda;
-
-
-
+    background-color: #f34651;
+    
 }
 .menu{
-    background-image: url("../Drawebles/menu.png");
+    background-image: url("/src/Drawebles/menu.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -143,7 +159,7 @@
   
 }
 .mode-btn{
-    background-image: url("../Drawebles/day.png");
+    background-image: url("/src/Drawebles/day.png");
     height: 30px;
     width: 30px;
     background-color: transparent;
@@ -152,7 +168,7 @@
     background-repeat: no-repeat;
 }
 .mode-btn.active{
-    background-image: url('../Drawebles/night.png');
+    background-image: url('/src/Drawebles/night.png');
 }
 @media screen and (max-width: 657px){
     body{
@@ -165,7 +181,7 @@
        
     }
     .menu.active{
-        background-image: url("../Drawebles/menuwhite.png");
+        background-image: url("/src/Drawebles/menuwhite.png");
     }
     .nav-left{
      position: absolute;
@@ -195,7 +211,7 @@
     .links{
         float: left;
         flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.09);
+        background-color: #E7E6E2;
         width: 100vw;
         padding: 10px;
     }

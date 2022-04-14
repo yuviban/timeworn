@@ -1,0 +1,56 @@
+
+.modal-close{
+
+}
+.modal-container{
+    background-color:white;
+    border-radius: 15px;
+    width: 40vw;
+    height: 75vh;
+    padding: 30px;
+}
+.modal-container.active{
+    background-color:#424242;
+}
+.modal-bg{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.342);
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.modal-close{
+    float: right;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    background-image: url("/src/Drawebles/close.png");
+    width: 24px;
+    height: 24px;
+    margin-top: -24px;
+    margin-right: -21px;
+}
+@media screen and (max-width: 490px){
+    .modal-container{
+        height: 40vh;
+    }
+}
+@media screen and (max-width: 490px){
+    .modal-container{
+        height: 40vh;
+    }
+    .modal-close{
+        float: none;
+    }
+}
+@media screen and (max-width: 375px){
+    .modal-container{
+        height: 40vh;
+    }
+    
+}
+
+
