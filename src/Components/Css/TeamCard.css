@@ -21,6 +21,7 @@
 .edit{
     background-image: url("/src/Drawebles/edit.png");
     float: right;
+    cursor: pointer;
     height: 24px;
     background-color: transparent;
     border: none;
@@ -28,6 +29,7 @@
 }
 .delete{
     background-image: url("/src/Drawebles/delete.png");
+    cursor: pointer;
     float: right;
     height: 24px;
     margin-left: 5px;
@@ -53,4 +55,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.team-card-info.active{
+    color: black;
 }

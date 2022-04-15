@@ -16,7 +16,12 @@ function Teams(props) {
 
   const [editModal, seteditModal] = useState(true);
   useEffect(() => {
-    getTeam()
+    if(localStorage.getItem('token')){
+      getTeam()
+    }
+    else{
+      console.log("Plz log in")
+    }
     // eslint-disable-next-line
   }, [])
   const [team, setTeams] = useState({ id: "", eteamname: "", eteamdescription: "" })
@@ -42,15 +47,13 @@ function Teams(props) {
     <>
     {props.openModel&&<Modal darkMode={props.darkMode} setOpenModel={props.setOpenModel}/>}
       <div className={editModal ? "edit-modal-bg active" : "edit-modal-bg"}>
-        <div className='edit-modal-container'>
-          <button onClick={() => { seteditModal(true) }} className='edit-modal-close'></button>
+        <div className={props.darkMode?"edit-modal-container active":"edit-modal-container"}>
+          <button onClick={() => { seteditModal(true) }} className={props.darkMode?"edit-modal-close active":"edit-modal-close"}></button>
 
           <form className='edit-form' >
-            <input minlength="3" maxlength="13" placeholder='Enter team name' value={team.eteamname} onChange={onChange} name='eteamname' id='eteamname' className='edit-input' type="text" />
-            <textarea minlength="5" spellCheck="false" className="edit-text-area" placeholder='Enter team description' value={team.eteamdescription} onChange={onChange} id='eteamdescription' name='eteamdescription' type="text" ></textarea>
-            <button onClick={handleOnClick} className='save-team-btn' type='submit'>Save</button>
-
-
+            <input minLength={4} maxLength={13} placeholder='Enter team name' value={team.eteamname} onChange={onChange} name='eteamname' id='eteamname' className={props.darkMode?"edit-input active":"edit-input"} type="text" />
+            <textarea minLength={5} spellCheck="false" className={props.darkMode?"edit-text-area active":"edit-text-area"} placeholder='Enter team description' value={team.eteamdescription} onChange={onChange} id='eteamdescription' name='eteamdescription' type="text" ></textarea>
+            <button disabled={team.eteamname.length<4  || team.eteamdescription.length<5} onClick={handleOnClick} className='save-team-btn' type='submit'>Save</button>
           </form>
         </div>
 
@@ -61,12 +64,15 @@ function Teams(props) {
 
       <div className='team-card-holder'>
 
-        <div className='grid'>
+        {localStorage.getItem('token')?<div className={props.darkMode?"grid active":"grid"}>
           {teams.length === 0 && 'No Teams to display creat one'}
           {teams.map((team) => {
-            return <TeamCard updateTeam={updateTeam} key={team._id} team={team} />
+            return <TeamCard darkMode={props.darkMode} updateTeam={updateTeam} key={team._id} team={team} />
           })}
-        </div>
+        </div>:
+        <div>
+          <h1>Please Log in to get your teams</h1>
+        </div>}
 
       </div>
     </>

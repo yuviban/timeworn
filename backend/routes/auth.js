@@ -16,6 +16,7 @@ router.post('/createuser', [
    body('lastname', "Enter a valid Last Name").isLength({ min: 3 }),
 ], async (req, res) => {      
    // if there are error,return bad request
+   let success = false;
    const errors = validationResult(req);
    if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -27,15 +28,14 @@ router.post('/createuser', [
       // Checking wether user with this username and email already exist
       let user = await User.findOne({ email: req.body.email });
       let username = await User.findOne({ username: req.body.username });
-      if (req.body.password != req.body.confirmpassword) {
-
-         return res.status(400).json({ error: "Password do not match" })
-      }
+     
       if (user) {
-         return res.status(400).json({ error: "Sorry user with this email already exist" })
+         success=false;
+         return res.status(400).json({ success, error: "Sorry user with this email already exist" })
       }
       if (username) {
-         return res.status(400).json({ error: "Sorry user with this username already exist" })
+         success=false;
+         return res.status(400).json({ success, error: "Sorry user with this username already exist" })
 
       }
       const salt = await bcrypt.genSalt(10);
@@ -56,7 +56,8 @@ router.post('/createuser', [
       }
       const JWT_SECRET = "shibdogeaxssandbtcethmanaenj";
       const authtoken = jwt.sign(data, JWT_SECRET);
-      res.json({ authtoken })
+      success=true;
+      res.json({ success,authtoken })
    } catch (error) {
       console.error(error.message)
       res.status(500).send("Internal Server Error");
@@ -68,6 +69,7 @@ router.post('/login', [
    body('email', "Enter a valid email").isEmail(),
    body('password', "Password cannot be blank").exists(),
 ], async (req, res) => {
+   let success = false;
    // if there are error,return bad request
    const errors = validationResult(req);
    if (!errors.isEmpty()) {
@@ -77,13 +79,15 @@ router.post('/login', [
    try {
       let user = await User.findOne({ email });
       if (!user) {
-         return res.status(400).json({ error: "Opps! email is incorrect" });
+         let email = false;
+         return res.status(400).json({ email, error: "Opps! email is incorrect" });
       }
-     
       const passwordCompare = await bcrypt.compare(password, user.password);
       if (!passwordCompare) {
-         return res.status(400).json({ error: "Incorrect password" });
+         let pass = false;
+         return res.status(400).json({ pass,error: "Incorrect password" });
       }
+
       const data = {
          user: {
             id: user.id
@@ -92,7 +96,8 @@ router.post('/login', [
       }
       const JWT_SECRET = "shibdogeaxssandbtcethmanaenj";
       const authtoken = jwt.sign(data, JWT_SECRET);
-      res.json({ authtoken })
+      success=true;
+      res.json({ success,authtoken })
    } catch (error) {
       console.error(error.message)
       res.status(500).send("Internal Server Error");

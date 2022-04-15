@@ -19,6 +19,7 @@
 
 .crt-btn{
     transform: translate(-32px, 56px);
+    cursor: pointer;
     border-radius: 20px;
     float: right;
     text-align: center;
@@ -42,6 +43,9 @@
     width: 30%;
     margin-top: -81px;
     padding: 20px;
+}
+.edit-modal-container.active{
+    background-color: #424242;
 }
 .edit-form-container{
     width: 410px;
@@ -68,6 +72,7 @@
     text-align: center;
     width: 150px;
     border-radius: 20px;
+    cursor: pointer;
     color: #ffff;
     background-color: #6c63ff;
     border: none;
@@ -89,6 +94,11 @@
     margin: -11px;
 
 }
+.edit-modal-close.active{
+    background-image: url("/src/Drawebles/close-night.png");
+    
+
+}
 .edit-text-area{
     width: 345px;
     height: 180px;
@@ -105,6 +115,9 @@
     text-decoration: none;
 
 }
+.grid.active{
+    color: white;
+}
 .edit-input{
     margin-bottom: 20px;
     height: 30px;
@@ -114,6 +127,16 @@
     padding-left: 10px;
     padding-right: 10px;
     border: 1px solid rgba(0, 0, 0, 0.452);
+}
+.edit-input.active{
+    background-color: #323232;
+    color: white;
+    border: none;
+}
+.edit-text-area.active{
+    color: white;
+    background-color: #323232;
+    border: none;
 }
 .edit-lable1{
   

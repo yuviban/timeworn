@@ -11,7 +11,7 @@ function Modal(props) {
     <div className='modal-bg'>
 
       <div className={props.darkMode?"modal-container active ":"modal-container"}>
-        <button className='modal-close' onClick={toggleclose}></button>
+        <button className={props.darkMode?"modal-close active":"modal-close"} onClick={toggleclose}></button>
         <TeamModal dMode={props.darkMode} toggleclose={toggleclose}/>
       </div>
     </div>

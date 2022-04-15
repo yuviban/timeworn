@@ -18,19 +18,37 @@
     color: #ffff;
     background-color: #6c63ff;
     border: none;
+    cursor: pointer;
     margin-top: 10px;
     font-weight: 500;
     font-size: 1rem;
     height: 40px;
     width: 200px;
 }
-#teamdescription{
+
+.team-text-area{
     resize: none;
     height: 200px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.452);
+    margin-bottom: 20px;
+    padding-left: 10px;
+    width: 500px;
 }
-#teamdescription:focus{
+.team-text-area.active{
+    background-color: #323232;
+    border-radius: 5px;
+    border: none;
+    color: #ffff;
+
+}
+.team-text-area:focus{
     outline: none;
+ 
+
 }
+
 .team-input{
     width: 500px;
     height: 40px;
@@ -59,22 +77,44 @@ input:focus{
     .team-input{
         width: 400px;
     }
+    .team-text-area{
+        width: 400px;
+
+    }
 }
 @media screen and (max-width: 973px){
     .team-input{
         width: 300px;
+    }
+    .team-text-area{
+        width: 300px;
+        
+    
     }
 }
 @media screen and (max-width: 733px){
     .team-input{
         width: 200px;
     }
+    .team-text-area{
+        width: 200px;
+        
+    
+    }
+
 }
 @media screen and (max-width: 490px){
     .team-input{
         width: 200px;
         margin-bottom: 10px;
     }
+    .team-text-area{
+        width: 200px;
+        margin-bottom: 10px;
+        
+    
+    }
+
     .creat-team-btn{
         width: 100px;
         font-size: 12px;
@@ -84,12 +124,19 @@ input:focus{
         padding: 10px;
     }
 }
-@media screen and (max-width: 468px){
+@media screen and (max-width: 491px){
     .team-input{
         width: 150px;
         font-size: 12px;
    
     }
+    .team-text-area{
+        width: 150px;
+        font-size: 12px;
+        
+    
+    }
+
     #teamdescription{
         height: 64px;
     }

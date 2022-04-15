@@ -9,6 +9,8 @@ import {
 } from "react-router-dom";
 import TeamState from './Context/TeamState';
 import Teams  from './Components/Teams';
+import SignupModal from './Components/SignupModal';
+import LoginModal from './Components/LoginModal';
 
 
 
@@ -16,15 +18,30 @@ import Teams  from './Components/Teams';
 function App() {
   const [darkMode, setdarkMode] = useState(false)
   const [openModel,setOpenModel] = useState(false);
+  const [opensignupModal,setSignupModal] = useState(true);
+  const [openloginModal,setLoginModal] = useState(true);
   const toggleModel =()=>{
-    setOpenModel(true)
+    if(localStorage.getItem('token')){
+      setOpenModel(true)
+    }
+    else{
+      setLoginModal(false);
+    }
+  }
+  const toggleSignupModal =()=>{
+    setSignupModal(false)
+  }
+  const toggleLoginModal =()=>{
+    setLoginModal(false)
   }
 
   return (
     <>
       <TeamState>
         <Router>
-          <Navbar darkMode={darkMode} setdarkMode={setdarkMode} />
+          <Navbar toggleLoginModal={toggleLoginModal} toggleSignupModal={toggleSignupModal} darkMode={darkMode} setdarkMode={setdarkMode} />
+          <SignupModal setSignupModal={setSignupModal} opensignupModal={opensignupModal}/>
+          <LoginModal setLoginModal={setLoginModal} openloginModal={openloginModal}/>
           <div className={darkMode ? "container active" : 'container'}>
             <Switch>
               <Route exact path="/">

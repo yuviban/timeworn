@@ -102,6 +102,7 @@
     margin-left: 15px;
     border-radius: 5px;
     font-weight: 600;
+    cursor: pointer;
     height: 30px;
     border: none;
     background-color: transparent;
@@ -120,6 +121,7 @@
     align-items: center;
 }
 .signup-btn{
+    cursor: pointer;
     color: white;
     margin-left: 15px;
     border-radius: 5px;
@@ -161,6 +163,7 @@
 .mode-btn{
     background-image: url("/src/Drawebles/day.png");
     height: 30px;
+    cursor: pointer;
     width: 30px;
     background-color: transparent;
     margin-left: 15px;

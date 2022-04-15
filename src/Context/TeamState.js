@@ -12,12 +12,11 @@ const TeamState=(props)=>{
                 method: 'GET', 
                 headers: {
                   'Content-Type': 'application/json',
-                  'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI1MjdiOTM2N2YzOWEyNDM0MTM0M2IwIn0sImlhdCI6MTY0OTU3Mjc1NX0.o2D6RiSt67ACXVg0ecOhERElIiFMpOUYRccA9bxWFJ0'
+                  'auth-token': localStorage.getItem('token')
                 },
 
             });
             const json = await response.json()
-            console.log(json);
             setTeams(json)
        
 
@@ -28,23 +27,13 @@ const TeamState=(props)=>{
                 method: 'POST', 
                 headers: {
                   'Content-Type': 'application/json',
-                  'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI1MjdiOTM2N2YzOWEyNDM0MTM0M2IwIn0sImlhdCI6MTY0OTU3Mjc1NX0.o2D6RiSt67ACXVg0ecOhERElIiFMpOUYRccA9bxWFJ0'
+                  'auth-token': localStorage.getItem('token')
                 },
                 body:JSON.stringify({teamname,teamdescription,teamcode})
 
             });
-            const json = await response.json();
-            console.log(json);
-              const team= {
-                "_id": "6252a643e76ba3e3d89d8946a",
-                "user": "62527b9367f39a24341343b0",
-                "teamname": teamname,
-                "teamdescription": teamdescription,
-                "teamcode": teamcode,
-                "date": "2022-04-10T09:41:23.652Z",
-                "__v": 0
-              };
-              setTeams(teams.concat(team));
+            const team = await response.json();
+            setTeams(teams.concat(team));
 
             }
             
@@ -55,13 +44,12 @@ const TeamState=(props)=>{
                 method: 'DELETE', 
                 headers: {
                   'Content-Type': 'application/json',
-                  'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI1MjdiOTM2N2YzOWEyNDM0MTM0M2IwIn0sImlhdCI6MTY0OTU3Mjc1NX0.o2D6RiSt67ACXVg0ecOhERElIiFMpOUYRccA9bxWFJ0'
+                  'auth-token': localStorage.getItem('token')
                 },
   
 
             });
-            const json=  await response.json();
-            console.log(json);
+            const json=  response.json();
         
               const newTeams = teams.filter((team)=>{return team._id !== id});
               setTeams(newTeams);
@@ -74,13 +62,12 @@ const TeamState=(props)=>{
                 method: 'PUT', 
                 headers: {
                   'Content-Type': 'application/json',
-                  'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI1MjdiOTM2N2YzOWEyNDM0MTM0M2IwIn0sImlhdCI6MTY0OTU3Mjc1NX0.o2D6RiSt67ACXVg0ecOhERElIiFMpOUYRccA9bxWFJ0'
+                  'auth-token': localStorage.getItem('token')
                 },
                 body:JSON.stringify({teamname,teamdescription})
 
             });
             const json=  await response.json();
-            console.log(json);
             let newTeams= JSON.parse(JSON.stringify(teams))
             for (let index = 0; index < newTeams.length; index++) {
               const element = newTeams[index];

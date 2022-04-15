@@ -17,7 +17,7 @@ router.get('/fetchteam', fetchuser, async (req, res) => {
 })
 // ROUTE:2 Adding a Team :"/api/teams/addteam" login require
 router.post('/addteam', fetchuser, [
-    body('teamname', "Team name must be minimum 3 charecter and maximum 13 charecter").isLength({ min: 3, max:13}),
+    body('teamname', "Team name must be minimum 3 charecter and maximum 13 charecter").isLength({ min: 4, max:13}),
     body('teamcode', "Team code must be minimum 4 charecter and maximum 10 charetor").isLength({ min: 4 , max:6}),
     body('teamdescription', "Length of description must be atleast 5 charecter").isLength({ min: 5 }),
 

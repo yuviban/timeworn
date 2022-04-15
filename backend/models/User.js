@@ -24,10 +24,7 @@ const UserSchema = new Schema({
         type:String,
         require:true
     },
-    confirmpassword:{
-        type:String,
-        require:true
-    },
+
     date:{
         type:Date,
         default:Date.now

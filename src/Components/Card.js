@@ -8,6 +8,12 @@ function Card(props) {
     return <Redirect to="/teams"/>
 
   }
+  const togglegoto=()=>{
+    if(localStorage.getItem('token')){
+      setgotoTeam(false)
+    }
+
+  }
 
   return (
     <div className={props.dMode ? 'card active' : 'card'}>
@@ -15,7 +21,7 @@ function Card(props) {
         <h2 className='card-title'>{props.cardtitle}</h2>
         <img className='img' src={props.cardbg} alt="Team" />
         <p>{props.cardinfo}</p>
-        <a className='card-btn' onClick={()=>{setgotoTeam(false);props.toggleModel()}}>{props.cardbtn}</a>
+        <a className='card-btn' onClick={()=>{togglegoto();props.toggleModel()}}>{props.cardbtn}</a>
       </div>
 
     </div>
