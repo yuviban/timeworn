@@ -5,6 +5,10 @@
     height: 75vh;
     padding: 30px;
 }
+.signup-modal-container.active{
+    background-color:#424242;
+   
+}
 .signup-modal-bg{
     display: flex;
     background-color: rgba(0, 0, 0, 0.342);
@@ -28,6 +32,9 @@
     height: 24px;
     margin-top: -24px;
     margin-right: -21px;
+}
+.signup-modal-close.active{
+    background-image: url("/src/Drawebles/close-night.png");
 }
 .alertemailsingup{
     color: red;
@@ -84,6 +91,14 @@
     margin-bottom: 20px;
     padding-left: 10px;
   
+}
+.signuptitle.active{
+    color: white;
+}
+.signup-input.active{
+    background-color: #323232;
+    color: white;
+    border: none;
 }
 .flname{
     display: flex;

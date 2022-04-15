@@ -71,7 +71,7 @@ function Teams(props) {
           })}
         </div>:
         <div>
-          <h1>Please Log in to get your teams</h1>
+          <h1 className={props.darkMode?"nologin active":"nologin"}>Please Log in to get your teams</h1>
         </div>}
 
       </div>

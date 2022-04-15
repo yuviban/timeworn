@@ -1,11 +1,23 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Card from './Card';
+import { Redirect } from 'react-router-dom';
 import '../Components/Css/Home.css';
 import team from '../Drawebles/team.png'
 import code from '../Drawebles/code.png'
 import ppt from '../Drawebles/ppt.png'
 
 function Home(props) {
+  const [gotoTeam ,setgotoTeam]=useState(true)
+  if(!gotoTeam){
+    return <Redirect to="/teams"/>
+
+  }
+  const togglegoto=()=>{
+    if(localStorage.getItem('token')){
+      setgotoTeam(false)
+    }
+
+  }
   return (
       <>
       <div className={props.darkMode?'card-holder active':'card-holder'}>
@@ -16,6 +28,7 @@ function Home(props) {
           cardbg={team}
           dMode={props.darkMode}
           toggleModel={props.toggleModel}
+          togglegoto={togglegoto}
           />
           <Card
           cardtitle="Present PPT"

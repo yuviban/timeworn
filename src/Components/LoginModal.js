@@ -44,13 +44,13 @@ function LoginModal(props) {
       }
     return(
     <div  className={props.openloginModal?"login-modal-bg active":"login-modal-bg"}>
-    <div className="login-modal-container">
-        <button className='login-modal-close'onClick={()=>{props.setLoginModal(true)}}></button>
+    <div className={props.darkMode?"login-modal-container active":"login-modal-container"}>
+        <button className={props.darkMode?"login-modal-close active":"login-modal-close"}onClick={()=>{props.setLoginModal(true)}}></button>
         <form className='login-form'onSubmit={handleSubmit}>
-            <h1>Log in</h1>
-            <input required value={credentials.email} onChange={onChange} className='login-input' placeholder='Email' type="email" name="email" />
+            <h1 className={props.darkMode?"logintitle active":"logintitle"} >Log in</h1>
+            <input required value={credentials.email} onChange={onChange} className={props.darkMode?"login-input active":"login-input"} placeholder='Email' type="email" name="email" />
             <h5 className={Alert?"alertemail active":"alertemail"}>Oops ! Email is incorrect</h5>
-            <input  required value={credentials.password} onChange={onChange} className='login-input' placeholder='Password' type="password" name="password" />
+            <input  required value={credentials.password} onChange={onChange} className={props.darkMode?"login-input active":"login-input"} placeholder='Password' type="password" name="password" />
             <h5 className={AlertPass?"alertpass active":"alertpass"}>Passwrod is incorrect</h5>
             <button type="submit"className='login-modal-btn' >Login</button>
         </form>

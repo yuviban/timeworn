@@ -57,6 +57,12 @@
     margin-top: 50px;
  
 }
+.nologin{
+    color: black;
+}
+.nologin.active{
+    color: white;
+}
 .edit-form{
     display: flex;
     flex-direction: column;

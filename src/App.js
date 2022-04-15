@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './Components/Navbar';
 import Home from './Components/Home';
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,6 +20,17 @@ function App() {
   const [openModel,setOpenModel] = useState(false);
   const [opensignupModal,setSignupModal] = useState(true);
   const [openloginModal,setLoginModal] = useState(true);
+  const setdarkmode=()=>{
+    if(localStorage.getItem('mode')){
+      localStorage.removeItem('mode')
+
+    }else{
+
+      window.localStorage.setItem('mode', JSON.stringify(darkMode));
+    }
+  }
+ 
+ 
   const toggleModel =()=>{
     if(localStorage.getItem('token')){
       setOpenModel(true)
@@ -39,9 +50,9 @@ function App() {
     <>
       <TeamState>
         <Router>
-          <Navbar toggleLoginModal={toggleLoginModal} toggleSignupModal={toggleSignupModal} darkMode={darkMode} setdarkMode={setdarkMode} />
-          <SignupModal setSignupModal={setSignupModal} opensignupModal={opensignupModal}/>
-          <LoginModal setLoginModal={setLoginModal} openloginModal={openloginModal}/>
+          <Navbar setdarkmode={setdarkmode} toggleLoginModal={toggleLoginModal} toggleSignupModal={toggleSignupModal} darkMode={darkMode} setdarkMode={setdarkMode} />
+          <SignupModal  darkMode={darkMode} setSignupModal={setSignupModal} opensignupModal={opensignupModal}/>
+          <LoginModal darkMode={darkMode} setLoginModal={setLoginModal} openloginModal={openloginModal}/>
           <div className={darkMode ? "container active" : 'container'}>
             <Switch>
               <Route exact path="/">
