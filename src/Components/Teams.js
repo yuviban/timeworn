@@ -19,9 +19,7 @@ function Teams(props) {
     if(localStorage.getItem('token')){
       getTeam()
     }
-    else{
-      console.log("Plz log in")
-    }
+    
     // eslint-disable-next-line
   }, [])
   const [team, setTeams] = useState({ id: "", eteamname: "", eteamdescription: "" })

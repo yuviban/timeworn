@@ -42,8 +42,8 @@ function SignupModal(props) {
     <div className={props.opensignupModal ? "signup-modal-bg active" : "signup-modal-bg"}>
       <div className={props.darkMode?"signup-modal-container active":"signup-modal-container"}>
         <button className={props.darkMode?"signup-modal-close active":"signup-modal-close"} onClick={() => { props.setSignupModal(true) }}></button>
-          <h1 className={props.darkMode?"signuptitle active":"signuptitle"}>Sign up</h1>
         <form onSubmit={handleSubmit} className='signup-form'>
+          <h1 className={props.darkMode?"signuptitle active":"signuptitle"}>Sign up</h1>
           <div className="flname">
             <input required minLength={3} onChange={onChange} className={props.darkMode?"signup-input active":"signup-input"} id='firstname' placeholder='First Name' type="text" name="firstname" />
             <input required minLength={3} onChange={onChange} className={props.darkMode?"signup-input active":"signup-input"} id='lastname' placeholder='Last Name' type="text" name="lastname" />

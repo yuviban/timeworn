@@ -13,15 +13,15 @@ function Navbar(props) {
     useEffect(() => {
     }, [location])
     const [active, setActive] = useState(false)
-   
-        useEffect(() => {
-            const data = window.localStorage.getItem('mode');
-            if (data !== null) {
-                props.setdarkMode(!props.darkMode);
 
-            }
-        }, []);
-  
+    useEffect(() => {
+        const data = window.localStorage.getItem('mode');
+        if (data !== null) {
+            props.setdarkMode(!props.darkMode);
+
+        }
+    }, []);
+
 
     const showMenu = () => {
         setActive(!active)
@@ -51,11 +51,14 @@ function Navbar(props) {
                     {!localStorage.getItem('token') ? <div className='nav-btn'>
                         <button onClick={props.toggleLoginModal} className={props.darkMode ? "login-btn active" : "login-btn"}>Log in</button>
                         <button className='signup-btn' onClick={props.toggleSignupModal}>Sign up</button>
-                        <button className={props.darkMode ? 'mode-btn active' : 'mode-btn'} onClick={()=>{props.setdarkmode(); props.setdarkMode(!props.darkMode);}}></button>
                     </div> :
                         <div className='nav-btn'>
                             <button onClick={handleLogout}>Log out</button>
                         </div>}
+                    <div className='nav-btn'>
+                        <button className={props.darkMode ? 'mode-btn active' : 'mode-btn'} onClick={() => { props.setdarkmode(); props.setdarkMode(!props.darkMode); }}></button>
+
+                    </div>
                 </div>
             </nav>
         </>

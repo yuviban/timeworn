@@ -1,8 +1,10 @@
 import React,{useState} from 'react'
 import "./Css/LoginModal.css"
+import {useHistory } from "react-router-dom";
 
 
 function LoginModal(props) {
+    let history = useHistory();
     const [Alert,setAlert] = useState(true);
     const [AlertPass,setAlertPass] = useState(true);
     const [credentials, setCredentials] = useState({email:"",password:""})
@@ -33,6 +35,8 @@ function LoginModal(props) {
                 setAlertPass(false);
                 setAlert(true);
             }
+            history.push("/home");
+            history.push("/teams");
             
             
            
