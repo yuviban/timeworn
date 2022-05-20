@@ -41,7 +41,7 @@
     left: 438px;
     position: absolute;
     font-weight: 500;
-    bottom: 291px;
+    bottom: 284px;
 
 }
 .alertuser{
@@ -49,8 +49,8 @@
     left: 438px;
     position: absolute;
     font-weight: 500;
-    bottom: 227px;
-    display: n;
+    bottom: 220px;
+  
 
 }
 .alertemailsingup.active{
@@ -110,4 +110,91 @@
 #firstname{
     margin-right: 10px;
     width: 234px;
+}
+@media screen and (max-width: 1258px){
+
+    .signup-input {
+        width: 382px;
+    }
+    #firstname{
+        width: 175px;
+    }
+    #lastname{
+        width: 175px;
+    }
+}
+@media screen and (max-width: 971px){
+
+    .signup-input {
+        width: 294px;
+    }
+    #firstname{
+        width: 130px;
+    }
+    #lastname{
+        width: 130px;
+    }
+    .signup-modal-container{
+        
+        height: 40vh;
+    }
+    
+
+}
+@media screen and (max-width: 724px){
+
+    .signup-input {
+        width: 232px;
+    }
+    #firstname{
+        width: 98px;
+    }
+    #lastname{
+        width: 98px;
+    }
+}
+@media screen and (max-width: 564px){
+
+    .signuptitle{
+        font-size: 25px;
+    }
+}
+@media screen and (max-width: 540px){
+
+    .signup-modal-container{
+        
+        height: 56vh;
+    }
+}
+@media screen and (max-width: 515px){
+
+    .signup-input {
+        width: 170px;
+        font-size: 10px;
+    }
+    #firstname{
+        width: 68px;
+    }
+    #lastname{
+        width: 68px;
+    }
+    .signuptitle{
+        width: 77px;
+        font-size: 20px;
+    }
+    .signup-modal-btn{
+        width: 101px;
+    }
+    .signup-modal-container{
+        
+    height: 49vh;
+
+    }
+}
+@media screen and (max-width: 375px){
+
+    .signup-modal-container {
+        height: 57vh;
+    }
+    
 }

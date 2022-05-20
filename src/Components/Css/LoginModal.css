@@ -20,7 +20,7 @@
     left: 438px;
     position: absolute;
     font-weight: 500;
-    bottom: 310px;
+    bottom: 276px;
 
 }
 .alertpass{
@@ -28,7 +28,7 @@
     left: 438px;
     position: absolute;
     font-weight: 500;
-    bottom: 236px;
+    bottom: 203px;
 
 }
 .alertemail.active{
@@ -96,4 +96,72 @@
     margin-bottom: 30px;
     padding-left: 10px;
   
+}
+@media screen and (max-width: 1280px){
+    .login-modal-container {
+
+        width: 51vw;
+        height: 43vh;
+   
+    }
+    .login-modal-container {
+ 
+        height: 70vh;
+    }
+
+   
+}
+@media screen and (max-width: 995px){
+    .login-modal-container {
+
+        width: 51vw;
+        height: 43vh;
+   
+    }
+    .login-input{
+        width: 406px;
+    }
+
+   
+}
+@media screen and (max-width: 815px){
+   
+    .login-input{
+        width: 326px;
+    }
+
+   
+}
+@media screen and (max-width: 650px){
+   
+    .login-input{
+        width: 257px;
+    }
+    .logintitle{
+        width: 96px;
+    }
+
+   
+}
+@media screen and (max-width: 540px){
+   
+    .login-modal-container {
+
+        height: 55vh;
+    }
+
+   
+}
+@media screen and (max-width: 445px){
+   
+    .login-input {
+        width: 183px;
+        font-size: 12px;
+    }
+    .login-modal-container {
+
+        height: 65vh;
+    }
+
+   
 }

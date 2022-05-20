@@ -180,3 +180,74 @@
     }
 
 }
+@media screen and (max-width: 1209px){
+    .edit-input{
+        width: 261px;
+
+    }
+    .edit-text-area{
+        width: 261px;
+
+    }
+
+
+}
+@media screen and (max-width: 952px){
+    .edit-input{
+        width: 200px;
+
+    }
+    .edit-text-area{
+        width: 200px;
+
+    }
+
+
+}
+@media screen and (max-width: 735px){
+    .edit-input{
+        width: 267px;
+
+    }
+    .edit-text-area{
+        width: 267px;
+
+    }
+    .save-team-btn{
+        width: 82px;
+    }
+    .edit-modal-container{
+        height: 43%;
+        width: 52%;
+    }
+
+
+}
+@media screen and (max-width: 548px){
+    .edit-input{
+        width: 200px;
+
+    }
+    .edit-text-area{
+        width: 200px;
+
+    }
+
+   
+
+
+}
+@media screen and (max-width: 420px){
+    .edit-input{
+        width: 150px;
+
+    }
+    .edit-text-area{
+        width: 150px;
+
+    }
+
+   
+
+
+}

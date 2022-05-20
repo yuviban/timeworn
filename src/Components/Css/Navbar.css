@@ -282,3 +282,16 @@
     }
 
 }
+@media screen and (max-width: 493px){
+
+    .nav-right {
+        position: absolute;
+        left: 117px;
+    }
+    .nav-right {
+        width: 71%;
+    }
+    .login-btn{
+        margin-left: -3px;
+    }
+}
